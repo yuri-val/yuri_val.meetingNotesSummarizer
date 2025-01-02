@@ -10,8 +10,8 @@
   "plugin.version": "0.0.1",
   "plugin.dependencies": [],
   "plugin.script": "script.js",
+  "plugin.requiredFiles": ["src/utils/logger.js", "src/templates/prompts.js"],
   "plugin.lastUpdateInfo": "",
-  "plugin.requiredFiles": "",
   "plugin.commands": [
     {
       "name": "summarize",
