@@ -6,7 +6,7 @@
   "plugin.name": "✨ Meeting Notes Summarizer",
   "plugin.description": "Summarizes current note (from NotePlan AI Meeting Notes)",
   "plugin.author": "Yuri Val",
-  "plugin.url": "https://example.com",
+  "plugin.url": "https://github.com/yuri-val/yuri_val.meetingNotesSummarizer",
   "plugin.version": "0.0.1",
   "plugin.dependencies": [],
   "plugin.script": "script.js",
