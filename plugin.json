@@ -1,0 +1,38 @@
+{
+  "noteplan.minAppVersion": "3.0.21",
+  "macOS.minVersion": "10.15.7",
+  "iOS.minVersion": "14",
+  "plugin.id": "yuri_val.meetingNotesSummarizer",
+  "plugin.name": "✨ Meeting Notes Summarizer",
+  "plugin.description": "Summarizes current note (from NotePlan AI Meeting Notes)",
+  "plugin.author": "Yuri Val",
+  "plugin.url": "https://example.com",
+  "plugin.version": "0.0.1",
+  "plugin.dependencies": [],
+  "plugin.script": "script.js",
+  "plugin.lastUpdateInfo": "",
+  "plugin.requiredFiles": "",
+  "plugin.commands": [
+    {
+      "name": "summarize",
+      "alias": ["s", "sum"],
+      "description": "Summarizes the content of a note",
+      "jsFunction": "summarizeNote",
+      "arguments": ["lang"]
+    }
+  ],
+  "plugin.settings": [
+    {
+      "type": "heading",
+      "title": "Note Summarizer Settings"
+    },
+    {
+      "key": "summarizeLanguage",
+      "title": "Summary language",
+      "description": "Enter the language for the summarization. \nIt supports as codes (en, es, uk, etc.) as full names (english, spanish, ukrainian, etc.)\n\nDefault: <your system language>",
+      "type": "string",
+      "default": "<system>",
+      "required": false
+    }
+  ]
+}
