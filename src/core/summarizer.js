@@ -1,11 +1,25 @@
 import { Logger } from '../utils/logger.js';
 import { formatPrompt } from '../templates/prompts.js';
 
+/**
+ * Class representing a Note Summarizer.
+ */
 export class NoteSummarizer {
+  /**
+   * Create a Note Summarizer.
+   * @param {Object} config - Configuration options.
+   * @param {string} config.language - The language for summarization.
+   */
   constructor(config = {}) {
     this.config = config;
   }
 
+  /**
+   * Summarize the given text.
+   * @param {string} text - The text to summarize.
+   * @returns {Promise<string>} The summarized text.
+   * @throws Will throw an error if summarization fails.
+   */
   async summarize(text) {
     try {
       Logger.log('Starting note summarization');
@@ -22,6 +36,10 @@ export class NoteSummarizer {
   }
 }
 
+/**
+ * Summarize the selected text in the editor.
+ * @returns {Promise<void>}
+ */
 export async function summarizeNote() {
   const selectedText = Editor.selectedText;
   if (!selectedText) {
@@ -29,8 +47,10 @@ export async function summarizeNote() {
     return;
   }
 
-  const lang = DataStore.settings.summarizeLanguage ||
-    NotePlan.environment.preferredLanguages[0];
+  let lang = DataStore.settings.summarizeLanguage;
+  if (!lang || lang === 'system') {
+    lang = DataStore.settings.summarizeLanguage;
+  }
 
   const summarizer = new NoteSummarizer({ language: lang });
 

@@ -1,3 +1,7 @@
+/**
+ * Template for the summary prompt.
+ * @constant {string}
+ */
 export const SUMMARY_PROMPT = `
 Analyze the following meeting note and extract the required information:
 
@@ -16,6 +20,11 @@ Analyze the following meeting note and extract the required information:
 6. **Tags**: Generate relevant tags for this meeting, including topics discussed or areas of focus. You can use nested tags for better organization. [i.e. #project #marketing #team #timeline #campaign #finance/balance #documentation/notes]
 `;
 
+/**
+ * Generates an important note template.
+ * @param {string} lang - The language code for the note.
+ * @returns {string} The important note template.
+ */
 export const IMPORTANT_NOTE = (lang) => `
 IMPORTANT:
 - use markdown syntax for formatting
@@ -24,6 +33,10 @@ IMPORTANT:
 - respond in "${lang}" language/code for better results
 `;
 
+/**
+ * Template for the example note.
+ * @constant {string}
+ */
 export const EXAMPLE_NOTE = `
 EXAMPLE:
 ---
@@ -57,7 +70,12 @@ The team discussed the project timeline and marketing campaign, agreeing on the 
 ---
 `;
 
-
+/**
+ * Formats the prompt with the given text and language.
+ * @param {string} text - The text to be summarized.
+ * @param {string} lang - The language code for the summarization.
+ * @returns {string} The formatted prompt.
+ */
 export function formatPrompt(text, lang) {
   return `
   ${SUMMARY_PROMPT}
